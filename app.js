@@ -14,16 +14,17 @@ searchUser.addEventListener('keyup', (e)=>{
         .then(data => {
             if(data.profile.message === 'Not Found'){
                 //show alert
-                alert
+                ui.showAlert('User Not Found', 'alert alert-danger')
 
             }else{
                 //show profile when it fetch
                 ui.showProfile(data.profile)
+                ui.showRepos(data.respos);
             }
         })
     }else{
         //clear the profile after input profile name/text
-
+        ui.clearProfile()
     }
 
 })
